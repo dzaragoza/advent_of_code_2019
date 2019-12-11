@@ -11,19 +11,19 @@ def travel(wire, layout):
         if i[0] == 'U':
             for j in range(i[1]):
                 y += 1
-                layout |= set([(x,y)])                
+                layout.add((x,y))
         elif i[0] == 'D':
             for j in range(i[1]):
                 y -= 1
-                layout |= set([(x,y)])
+                layout.add((x,y))
         elif i[0] == 'L':
             for j in range(i[1]):
                 x -= 1
-                layout |= set([(x,y)])
+                layout.add((x,y))
         elif i[0] == 'R':
             for j in range(i[1]):
                 x += 1
-                layout |= set([(x,y)])
+                layout.add((x,y))
 
 layout_a = set()
 layout_b = set()
