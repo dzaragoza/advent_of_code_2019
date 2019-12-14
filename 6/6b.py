@@ -12,14 +12,14 @@ for line in f:
 def predecessors(n):
     global nodes
     if n == 'COM':
-        return set(n)
+        return set([n])
     for p in nodes:
         if n in nodes[p]:
-            return set(n).add(predecessors(p))
+            return set([n]) | predecessors(p)
 
-san_you = predecessors('YOU')).difference(predecessors('SAN')
-you_san = predecessors('SAN')).difference(predecessors('YOU')
+p_YOU = predecessors('YOU')
+p_SAN = predecessors('SAN')
 
-print(len(san_you | you_san)-2)
+result = (p_YOU | p_SAN) - (p_YOU & p_SAN)
 
-#361
+print(len(result)-2)
