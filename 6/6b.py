@@ -3,8 +3,8 @@ f = [line.strip().split(')') for line in f]
 
 nodes = {}
 for line in f:
-    nodes[line[0]] = set()
     nodes[line[1]] = set()
+nodes['COM'] = set()
 
 for line in f:
     nodes[line[0]].add(line[1])
