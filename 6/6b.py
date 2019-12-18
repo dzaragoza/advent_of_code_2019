@@ -17,9 +17,6 @@ def predecessors(n):
         if n in nodes[p]:
             return set([n]) | predecessors(p)
 
-p_YOU = predecessors('YOU')
-p_SAN = predecessors('SAN')
-
-result = (p_YOU | p_SAN) - (p_YOU & p_SAN)
+result = predecessors('YOU') ^ predecessors('SAN')
 
 print(len(result)-2)
